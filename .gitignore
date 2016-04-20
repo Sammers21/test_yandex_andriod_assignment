@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Created by https://www.gitignore.io/api/windows,android,intellij
 
 ### Windows ###
@@ -24,8 +22,6 @@ $RECYCLE.BIN/
 
 
 ### Android ###
-=======
->>>>>>> 8f2d02fc6a4d703504c95c7cbbf0af658bba09da
 # Built application files
 *.apk
 *.ap_
@@ -41,8 +37,6 @@ bin/
 gen/
 <<<<<<< HEAD
 out/
-=======
->>>>>>> 8f2d02fc6a4d703504c95c7cbbf0af658bba09da
 
 # Gradle files
 .gradle/
@@ -62,7 +56,6 @@ proguard/
 
 # Android Studio captures folder
 captures/
-<<<<<<< HEAD
 
 # Intellij
 *.iml
@@ -122,5 +115,3 @@ fabric.properties
 
 ### Intellij Patch ###
 *.iml
-=======
->>>>>>> 8f2d02fc6a4d703504c95c7cbbf0af658bba09da
