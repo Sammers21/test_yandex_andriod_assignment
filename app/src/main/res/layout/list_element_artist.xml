@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="onClick"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/artist_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:transitionName="@string/transition_name_BigPhoto"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/artist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/artist_image"
+        android:layout_toRightOf="@id/artist_image"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000"
+        tools:text="Нюша" />
+
+    <TextView
+        android:id="@+id/artist_genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/artist_name"
+        android:layout_alignStart="@id/artist_name"
+        android:layout_below="@id/artist_name"
+        android:layout_marginTop="8dp"
+        android:transitionName="@string/transition_name_stules"
+        tools:text="black metal, dubstep" />
+
+    <TextView
+        android:id="@+id/artist_stuff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/artist_image"
+        android:layout_alignLeft="@id/artist_name"
+        android:layout_alignStart="@id/artist_name"
+        android:layout_marginBottom="8dp"
+        android:transitionName="@string/transition_name_albums"
+        tools:text="5 альбомов, 30 песен" />
+
+</RelativeLayout>

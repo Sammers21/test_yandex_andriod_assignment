@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <ImageView
+
+            android:id="@+id/BigPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:transitionName="@string/transition_name_BigPhoto" />
+
+        <TextView
+            android:id="@+id/stules"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/BigPhoto"
+            android:layout_alignStart="@+id/BigPhoto"
+            android:layout_below="@+id/BigPhoto"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="dance,electro"
+            android:transitionName="@string/transition_name_stules" />
+
+        <TextView
+            android:id="@+id/albums"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stules"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="5 альбомов"
+            android:transitionName="@string/transition_name_albums" />
+
+        <TextView
+            android:id="@+id/Bioraphy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/albums"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Биография"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/AboutAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Bioraphy"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:isScrollContainer="true"
+            android:text="ASFFWQFQWFQWFQWFQWafqwfqwfqwdefqewfwefwefdqwDWegwfdewgwEFfgewbfhewbflgewfbgwehclywcty34tvgtvnn3q4cty34ctgn3qygc3uayhtwfqwdsdytmnyu,yufwefhwefbewfewbhfbfchbweagfvcwefcwebfcywefbcwbfcwebgfcbevwkfguuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuucetfrcrgc23  ourgc326    tg326rgcuguygfwuoefgc23ogtco4uygtc34ygtoc3qlg34yfgr3a"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+
+</ScrollView>
