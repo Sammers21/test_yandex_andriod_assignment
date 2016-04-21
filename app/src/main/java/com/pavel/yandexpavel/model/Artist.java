@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.util.List;
 
 /**
- * Created by Павел on 16.04.2016.
+ * Модель для парсинга JSON
  */
 public class Artist implements Parcelable {
 

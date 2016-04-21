@@ -24,11 +24,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    ArtistRecyclerViewAdapter adapter;
-    List<Artist> artists;
-    Call<List<Artist>> list;
+    private RecyclerView recyclerView;
+    private ArtistRecyclerViewAdapter adapter;
+    private List<Artist> artists;
+    private Call<List<Artist>> list;
 
+    /**
+     * Метод вызывается при создании Акстиити
+     * а так же при других сецнариях жизненного цикла
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,17 +46,24 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.addOnItemTouchListener(new RecycleListener(this, new RecycleListener.OnItemClickListener() {
+            /**
+             * Проиходит в случае если пользователь нажал на элемент
+             * @param view
+             * @param position нмоер эелмента на который кликнули
+             */
             @Override
             public void onItemClick(View view, int position) {
                 Intent questionIntent = new Intent(MainActivity.this, ArtistInfo.class);
+
+                //Передаём данные о ортисте на
                 questionIntent.putExtra(ArtistInfo.TAG, artists.get(position));
-                // startActivity(questionIntent);
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                         // the context of the activity
                         MainActivity.this,
-                        // For each shared element, add to this method a new Pair item,
-                        // which contains the reference of the view we are transitioning *from*,
-                        // and the value of the transitionName attribute
+
+                        /**
+                         * устанавливаем анимацию перехода между Активити
+                         */
                         new Pair<View, String>(view.findViewById(R.id.artist_image),
                                 getString(R.string.transition_name_BigPhoto)),
                         new Pair<View, String>(view.findViewById(R.id.artist_genres),
@@ -65,12 +77,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        // adapter.
-
 
         loadArtists();
     }
 
+    /**
+     * Метод для получения и парсинга данных
+     */
     private void loadArtists() {
         list = new Retrofit.Builder()
                 .baseUrl("http://download.cdn.yandex.net/")
@@ -80,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
                 .listArtists();
 
         list.enqueue(new Callback<List<Artist>>() {
+            /**
+             * Получем и парсим данные
+             * @param call
+             * @param response
+             */
             @Override
             public void onResponse(Call<List<Artist>> call, Response<List<Artist>> response) {
                 artists.clear();
@@ -87,9 +105,14 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
 
+            /**
+             * В случае если не удалось получить данные из JSON
+             * @param call
+             * @param t
+             */
             @Override
             public void onFailure(Call<List<Artist>> call, Throwable t) {
-                Snackbar.make(recyclerView, "OSHIBKA!", Snackbar.LENGTH_INDEFINITE).setAction("Повторить", new View.OnClickListener() {
+                Snackbar.make(recyclerView, "Internet ERROR", Snackbar.LENGTH_INDEFINITE).setAction("Повторить", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         loadArtists();

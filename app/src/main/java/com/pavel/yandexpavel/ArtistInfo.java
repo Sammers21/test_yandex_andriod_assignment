@@ -19,11 +19,11 @@ public class ArtistInfo extends AppCompatActivity {
 
     public static final String TAG = "artist_tag";
 
-    ImageView imageView;
-    TextView textStules;
-    TextView textAlbums;
-    TextView textAboutAuthor;
-    TextView tv;
+    private ImageView imageView;
+    private TextView textStules;
+    private TextView textAlbums;
+    private TextView textAboutAuthor;
+    private TextView tv;
 
     /**
      * Переопределяем метод для того что бы кпока в ActinBar
@@ -57,17 +57,14 @@ public class ArtistInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_layut);
 
+        //получем данные из intent
         artist = getIntent().getParcelableExtra(TAG);
 
         //устанавливаем имя в ActionBar
         setTitle(artist.getName());
 
-        //находим по id элементы управления
-        imageView = (ImageView) findViewById(R.id.BigPhoto);
-        textStules = (TextView) findViewById(R.id.stules);
-        textAlbums = (TextView) findViewById(R.id.albums);
-        textAboutAuthor = (TextView) findViewById(R.id.AboutAuthor);
-        tv = (TextView) findViewById(R.id.stules);
+        // Инициализируем элементы
+        initElements();
 
         //собираем строку жанров
         String genres = "";
@@ -99,5 +96,18 @@ public class ArtistInfo extends AppCompatActivity {
                 .into(imageView);
 
     }
+
+    /**
+     * Иницилизируем элементы
+     */
+    private void initElements() {
+
+        imageView = (ImageView) findViewById(R.id.BigPhoto);
+        textStules = (TextView) findViewById(R.id.stules);
+        textAlbums = (TextView) findViewById(R.id.albums);
+        textAboutAuthor = (TextView) findViewById(R.id.AboutAuthor);
+        tv = (TextView) findViewById(R.id.stules);
+    }
+
 
 }

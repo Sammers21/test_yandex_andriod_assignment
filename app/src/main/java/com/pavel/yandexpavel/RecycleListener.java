@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by Павел on 19.04.2016.
+ * Класс для обрабатывания щелчков по элементам
  */
 public class RecycleListener implements RecyclerView.OnItemTouchListener {
 
@@ -17,6 +17,7 @@ public class RecycleListener implements RecyclerView.OnItemTouchListener {
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
     }
+
 
     public RecycleListener(Context context, OnItemClickListener onItemClickListener) {
         mlistenerl = onItemClickListener;
