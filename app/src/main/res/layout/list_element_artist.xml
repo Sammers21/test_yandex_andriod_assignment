@@ -34,7 +34,7 @@
         android:layout_alignStart="@id/artist_name"
         android:layout_below="@id/artist_name"
         android:layout_marginTop="8dp"
-        android:transitionName="@string/transition_name_stules"
+        android:transitionName="@string/transition_name_geners"
         tools:text="black metal, dubstep" />
 
     <TextView

@@ -23,7 +23,7 @@ public class ArtistInfo extends AppCompatActivity {
     private TextView textStules;
     private TextView textAlbums;
     private TextView textAboutAuthor;
-    private TextView tv;
+
 
     /**
      * Переопределяем метод для того что бы кпока в ActinBar
@@ -84,8 +84,7 @@ public class ArtistInfo extends AppCompatActivity {
         String tx = (artist.getDescription().charAt(0) + "").toUpperCase() + artist.getDescription().substring(1, artist.getDescription().length() - 1);
         textAboutAuthor.setText(tx);
 
-        //утанавливаем имя
-        tv.setText(artist.getName());
+
 
         //прогружаем и кэшируем большую фотографию
         Picasso.with(imageView.getContext())
@@ -106,7 +105,7 @@ public class ArtistInfo extends AppCompatActivity {
         textStules = (TextView) findViewById(R.id.stules);
         textAlbums = (TextView) findViewById(R.id.albums);
         textAboutAuthor = (TextView) findViewById(R.id.AboutAuthor);
-        tv = (TextView) findViewById(R.id.stules);
+
     }
 
 

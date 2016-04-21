@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         new Pair<View, String>(view.findViewById(R.id.artist_image),
                                 getString(R.string.transition_name_BigPhoto)),
                         new Pair<View, String>(view.findViewById(R.id.artist_genres),
-                                getString(R.string.transition_name_stules)),
+                                getString(R.string.transition_name_geners)),
                         new Pair<View, String>(view.findViewById(R.id.artist_stuff),
                                 getString(R.string.transition_name_albums))
 

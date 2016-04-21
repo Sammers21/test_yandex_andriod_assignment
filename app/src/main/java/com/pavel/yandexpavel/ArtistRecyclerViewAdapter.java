@@ -13,9 +13,6 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by Павел on 16.04.2016.
- */
 public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecyclerViewAdapter.ViewHolder> {
 
     private final List<Artist> artists;
@@ -24,6 +21,12 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
         this.artists = artists;
     }
 
+    /**
+     * Получения родителя для всех элементов группы
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -40,16 +43,20 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
+        //обект артиста
         Artist artist = artists.get(position);
 
+        //фотография
         Picasso.with(holder.image.getContext())
                 .load(artist.getCover().getSmall())
                 .fit()
                 .into(holder.image);
 
+        //имя
         holder.name.setText(artist.getName());
 
 
+        //жанрый исполителя
         String genres = "";
         if (artist.getGenres().size() > 1) {
             for (String genre : artist.getGenres()) {
@@ -61,11 +68,12 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
         }
         holder.genres.setText(genres);
 
+        //альбомы и песни
         holder.stuff.setText(String.format(Locale.US, "%d альбомов, %d песен", artist.getAlbums(), artist.getTracks()));
     }
 
     /**
-     * По
+     * Получем колличесвто элементов для  RecyclerView
      * @return
      */
     @Override
@@ -73,6 +81,9 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
         return artists.size();
     }
 
+    /**
+     * Класс элемента в  RecyclerView
+     */
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;

@@ -28,7 +28,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
             android:text="dance,electro"
-            android:transitionName="@string/transition_name_stules" />
+            android:transitionName="@string/transition_name_geners" />
 
         <TextView
             android:id="@+id/albums"
