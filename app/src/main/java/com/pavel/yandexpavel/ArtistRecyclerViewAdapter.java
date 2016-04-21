@@ -1,22 +1,17 @@
 package com.pavel.yandexpavel;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-
-
-        import android.support.v7.widget.RecyclerView;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ImageView;
-        import android.widget.TextView;
-
-import com.pavel.yandexpavel.R;
 import com.pavel.yandexpavel.model.Artist;
-        import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Picasso;
 
-        import java.util.List;
-        import java.util.Locale;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Павел on 16.04.2016.
@@ -70,6 +65,7 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
     }
 
     /**
+     * По
      * @return
      */
     @Override
